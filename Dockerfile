@@ -11,6 +11,9 @@ RUN yum install -y npm
 # Copy app to /src
 COPY . /src
 
+# bypass https
+npm config set strict-ssl false
+
 # Install app and dependencies into /src
 RUN cd /src; npm install
 
